@@ -1,10 +1,3 @@
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
-const fs = require('fs');
-const path = require('path');
-const config = require('./config');
-const express = require('express');
-const app = express();
-
 app.get('/', (req, res) => {
   res.send('Bot is running 24/7');
 });
@@ -13,6 +6,13 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is up on port ${PORT}`);
 });
+const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const fs = require('fs');
+const path = require('path');
+const config = require('./config');
+const express = require('express');
+const app = express();
+
 // إنشاء عميل البوت
 const client = new Client({
     intents: [
